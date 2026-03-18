@@ -10,7 +10,7 @@ This years ME 405 term project centered around the construction of "Romi", a sma
 ![](/Image/Wiring%20Pinout%203.png)
 
 ## Sensor Mount
-This is an image from our CAD that combines both our bump sensor mount (a button), and our Polulu line following sensor (QTRX-MD-08A)
+This is an image from our ![CAD](MISC/Romi.SLDPRT) that combines both our bump sensor mount (a button), and our Polulu line following sensor (QTRX-MD-08A)
 ![Sensor CAD](/Image/romi%201.png)
 
 ## Highlights
