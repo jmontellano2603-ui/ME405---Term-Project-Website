@@ -90,7 +90,7 @@ This is an image from our ![CAD](MISC/Romi.SLDPRT) that combines both our bump s
 
 # Video Demonstration
 
-See the robot complete a full lap: https://YOUR_VIDEO_URL_HERE
+See the robot complete a full lap [here](https://youtube.com/shorts/IOxTDhfyRBM)
 
 # Results
 
