@@ -46,7 +46,7 @@ class BTBridge:
             self._bt_buf += b
 
             if b in (b'\r', b'\n'):
-                line = bytes(self._bt_buf).rstrip(b"\r\n")  # <-- FIX: bytes(...)
+                line = bytes(self._bt_buf).rstrip(b"\r\n") 
                 self._bt_buf = bytearray()
 
                 if line:
