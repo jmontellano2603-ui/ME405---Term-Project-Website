@@ -9,18 +9,25 @@ The motor task is responsible for changing motor speeds based on a setpoint valu
 The user interface task is responsible for interacting with the user from the PuTTY port to activate certain aspects of the robot. The user is to input certain characters to change or activate various things. The following inputs are possible ways to interact with the user interface to change the control of the robot:
 
 1. "h" or "H"
+   
   Entering these characters will print the help menu for the robot. This help menu will help users debug and create new things with just a quick      description. Run our code to see this new tool!   
-2. "k" or "K"
+3. "k" or "K"
+
   Entering these characters will allow the user to change the gain values for the PI motor speed controller. There are default values made with       the code, but these values can be changed through the user interface.
-3. "s" or "S"
+4. "s" or "S"
+
   Entering these characters will allow the user to change the setpoint speed value for the motors. This value can be changed to debug and test the    controllers for the motors. 
-4. "l" or "L"
+5. "l" or "L"
+
   Entering these characters will allow the user to enable or disable line following for the robot. By default, line following is enabled and must     be turned off through the user interface or another task.
-5. "q" or "Q"
+6. "q" or "Q"
+
    Entering these characters will allow the user to enable or disable queues. For ease of testing, some instances may not need the robot to store      and print data from the queues. By disabling the queues in these cases, the robot procesing power can be conserved for other uses
-6. "t" or "T"
+7. "t" or "T"
+
    Entering these characters will allow the user to enable and disable time value storage. Similar to the queue enable/disable, this function will     allow the user to not store and print time values when necessary.
-7. "g" or "G"
+8. "g" or "G"
+
    Entering these characters will allow the user to activate a step response from the motors. A secondary prompt will ask the user to enter another character to specify which motors to run. In this case, "L" = Left, "R" = Right, and "B" = Both. 
 ![User Task State Transition](Image/User_Task_State_Transition.png)
 
