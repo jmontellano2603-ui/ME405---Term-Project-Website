@@ -2,7 +2,7 @@
 ## By John Urrutia and Pierce Baugher
 
 ## Introduction
-This years ME 405 term project centered around the construction of "Romi", a small robot kit by Polulu. The computer controlling Romi is a STM32 NUCLEO-L476RG, with an additional power distributin board to proivde safe power, and a " The purpose was to gain hands on expierence with wiring motors and sensors, creating structured, adaptable, and expandable code with the goal of creating a reliable closed feedback system.
+This years ME 405 term project centered around the construction of "Romi", a small robot kit by Polulu. The computer controlling Romi is a STM32 NUCLEO-L476RG, with an additional power distributin board to proivde safe power, and a " The purpose was to gain hands on expierence with wiring motors and sensors, creating structured and adaptable code with the goal of creating a reliable closed feedback system that would be tested on a playing field.
 
 ## Wiring
 ![Wiring Diagram](/Image/Wiring%20Pinout.png)
@@ -20,6 +20,7 @@ This is an image from our CAD that combines both our bump sensor mount (a button
 - Our state estimator is accurate with an approximate ~2% margin of error after many hours of tuning. After many attempts we succefsul had a somewhat reasonable and reliable set of arrays, that we then tuned by multiplying our B array by the percent error. We repeated this process a few times, using various speeds and distances to not overtune to specific settings, until we were satisfied that the reaminaing error was casued by drift.
 
 ## Results
+Our Romi succesfully navigates the playing course, covering all checkpoints utlizing mainly line following and state estimation.
 
 ## BOM
 
