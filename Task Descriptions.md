@@ -3,6 +3,7 @@ This page will go more in depth into each individual task that is created and ru
 
 ## Motor Task (task_motor)
 The motor task is responsible for changing motor speeds based on a setpoint value. There are two individual motor tasks in the scheduler: one for the right motor and one for the left motor. A PI controller is used to help change the motor effort to reach the setpoint speed. To handle turns, a steering value is calculated from the line following task and stored in a share for the motor task to use. Depending on which motor task is being run, the wheel is either slowed down or sped up according to the necessary turn direction. There are also clamps based on the motor effort set function and the error value to prevent any over shooting beyond hardware capabilities. Debugging can be done by enabling time and motor value falgs (velocity and position) from the user interface.
+
 ![Motor Task State Transition](Image/Motor_Task_State_Transition.png)
 
 ## User Interface Task (user_task)
@@ -10,19 +11,19 @@ The user interface task is responsible for interacting with the user from the Pu
 
 1. "h" or "H"
    
-  Entering these characters will print the help menu for the robot. This help menu will help users debug and create new things with just a quick      description. Run our code to see this new tool!   
+Entering these characters will print the help menu for the robot. This help menu will help users debug and create new things with just a quick      description. Run our code to see this new tool!   
   
 2. "k" or "K"
 
-  Entering these characters will allow the user to change the gain values for the PI motor speed controller. There are default values made with       the code, but these values can be changed through the user interface.
+Entering these characters will allow the user to change the gain values for the PI motor speed controller. There are default values made with       the code, but these values can be changed through the user interface.
   
 3. "s" or "S"
 
-  Entering these characters will allow the user to change the setpoint speed value for the motors. This value can be changed to debug and test the    controllers for the motors. 
+Entering these characters will allow the user to change the setpoint speed value for the motors. This value can be changed to debug and test the    controllers for the motors. 
   
 4. "l" or "L"
 
-  Entering these characters will allow the user to enable or disable line following for the robot. By default, line following is enabled and must     be turned off through the user interface or another task.
+Entering these characters will allow the user to enable or disable line following for the robot. By default, line following is enabled and must     be turned off through the user interface or another task.
   
 5. "q" or "Q"
 
@@ -39,6 +40,8 @@ Entering these characters will allow the user to activate a step response from t
 ![User Task State Transition](Image/User_Task_State_Transition.png)
 
 ## Line Following Task (task_line)
+
+The Line Following Task is responsible for calculating steering correction signals for the motors when in line following scenarios. See State Estimation task for turning in non-line following scenarios. The task utilizes the QTR-8A IR sensor driver (line_follower.py) to find an error signal and utilize this signal in the PID controller. As the sensor driver calculates a distance to the centroid of the detected line from the center of the sensor, this distance is directly used as the error for the PID controller. 
 
 ![Line Following Task State Transition](Image/Line_Following_Task_State_Transition.png)
 
