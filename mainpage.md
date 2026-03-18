@@ -44,10 +44,13 @@ Note: X and Y absolute positons are not included in the state estimation and are
 
 # Line Following
 
-The QTR-8A driver computes a centroid position in mm from the sensor
+Line following is accomplished using a front mounted QTR-8A IR sensor that does dynamic thresholding from sensor readings and calculates a centroid position in mm from the sensor
 center. A PID controller (Kp=6.0, Ki=0.7, Kd=0.9) converts this error
-into a steering correction, filtered through an EMA (alpha=0.45) before
-reaching the motor tasks.
+into a steering correction that is sent to both motors for adaptive speed setpoints.
+
+# Object Detection
+
+Our Romi also has a front mounted button used for object detection. One of the pins (C8) is set up as a pull down input pin and is set high whenever the button is pressed and an object is detected. In reference to the game track, this tells Romi that the wall has been reached and to move backwards. This same process could be followed for more bump detection (buttons) attached, however our Romi only uses the 1 front mounted button.
 
 # Video Demonstration
 
@@ -55,7 +58,9 @@ See the robot complete a full lap: https://YOUR_VIDEO_URL_HERE
 
 # Results
 
-The robot successfully navigated the course. Key lessons learned:
-- EMA filtering on steering output dramatically reduced oscillation
-- IMU fusion in IMU mode gave stable heading despite motor noise
-- Lost-line hold logic (4 tick hold + 85% decay) handled sharp curves
+The robot successfully navigated the course. Key lessons learned throughout this course/project:
+- creation of classes and implementation of classes when making new objects
+- PID tuning of different objects to achieve tasks (motor velocity, steering correction)
+- Cooperative scheduling of robot tasks and sharing of task information through Queues/Shares
+- Utilization of IMU and encoder informtation for more accurate and corrected future state estimation
+- 
