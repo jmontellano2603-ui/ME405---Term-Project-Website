@@ -10,6 +10,23 @@ John:	jjmontel@calpoly.edu
 
 # Hardware
 
+| Name | Description | Quantity |
+| :---     |    :---: |     ---: |
+|     Nucleo    |          STM32 Nucleo L476RG            |   x 1    |
+| Shoe of Brian |      Micropython Interpretor            |   x 1    |
+|     BNO055    |      9-DOF Absolute Orienation Sensor   |   x 1    |
+|  QTRX-MD-08A  |         Line Following Sensor           |   x 1    |
+|HC-05 BT Module|Bluetooth Module for Remote Communication|   x 1    |
+|   32U4 Board  |        Romi 32U4 Control Board          |   x 2    |
+|   Base Plate  |         Romi Chasis Base Plate          |   x 1    |
+|   Gear Motors |     120:1 Mini Plastic Gear Motors      |   x 2    |
+|   Motor Clip  |        Romi Chasis Motor Clips          |   x 2    |
+|     Wheels    |        Polulu Wheel 70 x 8 mm           |   x 2    |
+|  Ball Casters |        Romi Chasis Ball Casters         |   x 2    |
+|    Batteries  |       6 Rechargable AA Batteries        |   x 6    |
+|     Button    |     Bump Switch for object detection    |   x 1    |
+
+
 - STM32 L476RG microcontroller with Shoe of Brian Attachment
 - Pololu Romi chassis with motor driver and power distribution board (dual DRV8838)
 - BNO055 Inertial Measurement Unit (IMU)
@@ -17,6 +34,11 @@ John:	jjmontel@calpoly.edu
 - Quadrature wheel encoders
 - HC-05 Bluetooth module
 - Front mounted bump switch 
+
+# Wiring
+![Wiring Diagram](/Image/Wiring%20Pinout.png)
+![](/Image/Wiring%20Pinout%202.png)
+![](/Image/Wiring%20Pinout%203.png)
 
 # Software Architecture
 
@@ -58,10 +80,13 @@ $$
 \frac{0.07 \times 0 + 0.14 \times 8 + 0.47 \times 16 + 0.87 \times 24 + 1 \times 32 + 0.54 \times 40 + 0.27 \times 48 + 0 \times 56}{0.07 + 0.14 + 0.47 + 0.87 + 1 + 0.54 + 0.27 + 0} \approx 29.595 \, \text{mm}
 $$
 
-
 # Object Detection
 
 Our Romi also has a front mounted button used for object detection. One of the pins (C8) is set up as a pull down input pin and is set high whenever the button is pressed and an object is detected. In reference to the game track, this tells Romi that the wall has been reached and to move backwards. This same process could be followed for more bump detection (buttons) attached, however our Romi only uses the 1 front mounted button.
+
+This is an image from our ![CAD](MISC/Romi.SLDPRT) that combines both our bump sensor mount (a button), and our Polulu line following sensor (QTRX-MD-08A)
+![Sensor CAD](/Image/romi%201.png)
+
 
 # Video Demonstration
 
@@ -74,3 +99,11 @@ The robot successfully navigated the course. Key lessons learned throughout this
 - PID tuning of different objects to achieve tasks (motor velocity, steering correction)
 - Cooperative scheduling of robot tasks and sharing of task information through Queues/Shares
 - Utilization of IMU and encoder informtation for more accurate and corrected state estimation
+
+
+
+
+
+
+
+
