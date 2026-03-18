@@ -4,8 +4,8 @@ This page will go more in depth into each individual task that is created and ru
 ## Motor Task (task_motor)
 ![Motor Task State Transition](Image/Motor_Task_State_Transition.png)
 ## User Interface Task (user_task)
-fasfaffa
+![User Task State Transition](Image/User_Task_State_Transition.png)
 ## Line Following Task (task_line)
-afssfsafa
+![Line Following Task State Transition](Image/Line_Following_Task_State_Transition.png)
 ## State Estimation Task (task_state)
-
+![State Estimation Task State Transition](Image/State_Estimation_Task_State_Transition.png)
