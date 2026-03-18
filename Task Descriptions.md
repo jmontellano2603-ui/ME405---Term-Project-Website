@@ -2,10 +2,32 @@
 This page will go more in depth into each individual task that is created and run in the cooperative scheduler. Each task will have an accompanying state transition diagram to demonstrate the changes in state for each FSM style task. An entire task diagram will then show the total framework for how each task cooperates with each other.
 
 ## Motor Task (task_motor)
+The motor task is responsible for changing motor speeds based on a setpoint value. There are two individual motor tasks in the scheduler: one for the right motor and one for the left motor. A PI controller is used to help change the motor effort to reach the setpoint speed. To handle turns, a steering value is calculated from the line following task and stored in a share for the motor task to use. Depending on which motor task is being run, the wheel is either slowed down or sped up according to the necessary turn direction. There are also clamps based on the motor effort set function and the error value to prevent any over shooting beyond hardware capabilities. Debugging can be done by enabling time and motor value falgs (velocity and position) from the user interface.
 ![Motor Task State Transition](Image/Motor_Task_State_Transition.png)
+
 ## User Interface Task (user_task)
+The user interface task is responsible for interacting with the user from the PuTTY port to activate certain aspects of the robot. The user is to input certain characters to change or activate various things. The following inputs are possible ways to interact with the user interface to change the control of the robot:
+
+1. "h" or "H"
+  Entering these characters will print the help menu for the robot. This help menu will help users debug and create new things with just a quick      description. Run our code to see this new tool!   
+2. "k" or "K"
+  Entering these characters will allow the user to change the gain values for the PI motor speed controller. There are default values made with       the code, but these values can be changed through the user interface.
+3. "s" or "S"
+  Entering these characters will allow the user to change the setpoint speed value for the motors. This value can be changed to debug and test the    controllers for the motors. 
+4. "l" or "L"
+  Entering these characters will allow the user to enable or disable line following for the robot. By default, line following is enabled and must     be turned off through the user interface or another task.
+5. "q" or "Q"
+   Entering these characters will allow the user to enable or disable queues. For ease of testing, some instances may not need the robot to store      and print data from the queues. By disabling the queues in these cases, the robot procesing power can be conserved for other uses
+6. "t" or "T"
+   Entering these characters will allow the user to enable and disable time value storage. Similar to the queue enable/disable, this function will     allow the user to not store and print time values when necessary.
+7. "g" or "G"
+   Entering these characters will allow the user to activate a step response from the motors. A secondary prompt will ask the user to enter another character to specify which motors to run. In this case, "L" = Left, "R" = Right, and "B" = Both. 
 ![User Task State Transition](Image/User_Task_State_Transition.png)
+
 ## Line Following Task (task_line)
+
 ![Line Following Task State Transition](Image/Line_Following_Task_State_Transition.png)
+
 ## State Estimation Task (task_state)
+
 ![State Estimation Task State Transition](Image/State_Estimation_Task_State_Transition.png)
