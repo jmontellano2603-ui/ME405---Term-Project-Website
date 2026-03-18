@@ -62,5 +62,4 @@ The robot successfully navigated the course. Key lessons learned throughout this
 - creation of classes and implementation of classes when making new objects
 - PID tuning of different objects to achieve tasks (motor velocity, steering correction)
 - Cooperative scheduling of robot tasks and sharing of task information through Queues/Shares
-- Utilization of IMU and encoder informtation for more accurate and corrected future state estimation
-- 
+- Utilization of IMU and encoder informtation for more accurate and corrected state estimation
