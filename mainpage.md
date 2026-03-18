@@ -69,7 +69,7 @@ Note: X and Y absolute positons are not included in the state estimation and are
 Line following is accomplished using a front mounted QTR-8A IR sensor that does dynamic thresholding from sensor readings and calculates a centroid position in mm from the sensor
 center. A PID controller (Kp=6.0, Ki=0.7, Kd=0.9) converts this error
 into a steering correction that is sent to both motors for adaptive speed setpoints.
-Below is an example of a one sensor reading, and how it is mnaipulated to find where the centroid of the line is. It is important to note that our "0" mm is equal to being directly over the first sensor  
+Below is an example of a one sensor reading, and how it is mnaipulated to find where the centroid of the line is. It is important to note that our "0" mm is equal to being directly over the first sensor, and our sensor spacing was 8mm.
 |Initial sensor readings (1-8)|5500|54000|49000| 43000| 41000| 48000| 52000| 56000|
 | :---     |    :---: |    :---: |    :---: |    :---: |    :---: |    :---: |    :---: |    :---: |
 |Subtracted Min.| 14000|13000|8000|2000|0000|7000|11000|15000| 
