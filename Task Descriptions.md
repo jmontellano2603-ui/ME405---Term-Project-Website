@@ -26,15 +26,15 @@ The user interface task is responsible for interacting with the user from the Pu
   
 5. "q" or "Q"
 
-   Entering these characters will allow the user to enable or disable queues. For ease of testing, some instances may not need the robot to store      and print data from the queues. By disabling the queues in these cases, the robot procesing power can be conserved for other uses.
+Entering these characters will allow the user to enable or disable queues. For ease of testing, some instances may not need the robot to store      and print data from the queues. By disabling the queues in these cases, the robot procesing power can be conserved for other uses.
    
 6. "t" or "T"
 
-   Entering these characters will allow the user to enable and disable time value storage. Similar to the queue enable/disable, this function will     allow the user to not store and print time values when necessary.
+Entering these characters will allow the user to enable and disable time value storage. Similar to the queue enable/disable, this function will     allow the user to not store and print time values when necessary.
    
 7. "g" or "G"
 
-   Entering these characters will allow the user to activate a step response from the motors. A secondary prompt will ask the user to enter another character to specify which motors to run. In this case, "L" = Left, "R" = Right, and "B" = Both. 
+Entering these characters will allow the user to activate a step response from the motors. A secondary prompt will ask the user to enter another character to specify which motors to run. In this case, "L" = Left, "R" = Right, and "B" = Both. 
    
 ![User Task State Transition](Image/User_Task_State_Transition.png)
 
