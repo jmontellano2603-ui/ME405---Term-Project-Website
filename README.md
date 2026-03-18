@@ -22,15 +22,16 @@ This is an image from our CAD that combines both our bump sensor mount (a button
 ## Results
 
 ## BOM
-|      Name     |            Description         | Quantity | 
-|----------------------------------------------------------|
+
+| Name | Description | Quantity |
+| :---     |    :---: |     ---: |
 |     Nucleo    |      STM32 Nucleo L476RG       |   x 1    |
-| Shoe of Brian |    Polulu Wheel 70 x 8 mm      |   x 2    |
-|   32U4 Board  |    Polulu Wheel 70 x 8 mm      |   x 2    |
+| Shoe of Brian |  Micropython Interpretor        |   x 1    |
+|   32U4 Board  |    Romi 32U4 Control Board     |   x 2    |
 |   Base Plate  |     Romi Chasis Base Plate     |   x 1    |
 |   Gear Motors | 120:1 Mini Plastic Gear Motors |   x 2    |
 |   Motor Clip  |    Romi Chasis Motor Clips     |   x 2    |
 |     Wheels    |    Polulu Wheel 70 x 8 mm      |   x 2    |
 |  Ball Casters |    Romi Chasis Ball Casters    |   x 2    |
 |    Batteries  |   6 Rechargable AA Batteries   |   x 2    |
-|  QTRX-MD-08A  | Line Following Sensor  |   x 1    |
+|  QTRX-MD-08A  |     Line Following Sensor      |   x 1    |
