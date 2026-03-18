@@ -1,4 +1,4 @@
-@mainpage Romi Autonomous Robot — ME 405
+Romi Autonomous Robot — ME 405
 
 # Project Overview
 
