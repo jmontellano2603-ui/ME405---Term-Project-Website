@@ -47,6 +47,17 @@ Note: X and Y absolute positons are not included in the state estimation and are
 Line following is accomplished using a front mounted QTR-8A IR sensor that does dynamic thresholding from sensor readings and calculates a centroid position in mm from the sensor
 center. A PID controller (Kp=6.0, Ki=0.7, Kd=0.9) converts this error
 into a steering correction that is sent to both motors for adaptive speed setpoints.
+Below is an example of a one sensor reading, and how it is mnaipulated to find where the centroid of the line is. It is important to note that our "0" mm is equal to being directly over the first sensor  
+|Initial sensor readings (1-8)|5500|54000|49000| 43000| 41000| 48000| 52000| 56000|
+| :---     |    :---: |    :---: |    :---: |    :---: |    :---: |    :---: |    :---: |    :---: |
+|Subtracted Min.| 14000|13000|8000|2000|0000|7000|11000|15000| 
+|Divided BY Range| 0.93|0.86|0.53|0.13|0|0.46|0.73|1|
+|Inverted Strenth|0.07|0.14|0.47|0.87|1|0.54|0.27|0|
+
+$$
+\frac{0.07 \times 0 + 0.14 \times 8 + 0.47 \times 16 + 0.87 \times 24 + 1 \times 32 + 0.54 \times 40 + 0.27 \times 48 + 0 \times 56}{0.07 + 0.14 + 0.47 + 0.87 + 1 + 0.54 + 0.27 + 0} \approx 29.595 \, \text{mm}
+$$
+
 
 # Object Detection
 
