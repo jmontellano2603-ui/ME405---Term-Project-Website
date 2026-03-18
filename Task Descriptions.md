@@ -52,3 +52,10 @@ Different standardization, normalization, and filterting techniques are applied 
 The state estimation task is responsible for utilizing information from the BNO055 Inertial Measurement Unit (IMU), enocder readings, and motor effort values to do discretized predictions about the changes in state of the robot. The state estimation task utilizes discretized matrices (AD and BD) to give weights to certain values in the prediction of the state based on the robot's dynamic model and sensor readings combined. The discretized matrices matrices were pre-determined during the creation of this task and automatically stored inside the code. Once the observer has created it's predictions, these predictions are then also utilized to predict X and Y position which were not apart of the obserber's state vector. 
 
 ![State Estimation Task State Transition](Image/State_Estimation_Task_State_Transition.png)
+
+
+## Task Diagram
+
+The below diagram demonstrates how each task cooperates will each other in creating an adaptable Romi robot. The diamgram follows the Task Diagram format where shares are denoted with dotted lines and queues are denoted with solid lines. Each share/queue has it's corresponding data type and queue also has it's length. Each box represents a task running within the scheduler. The task boxes also include their corresponding period and priority that is defined when the task objects are appended to the task list. 
+
+![Overall Task Diagram](Image/Romi_Task_Diagram.png)
