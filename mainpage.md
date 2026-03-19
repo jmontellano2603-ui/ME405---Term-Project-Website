@@ -8,6 +8,9 @@ If you have any questions, feel free to contact us!
 Pierce:	pbaugher@calpoly.edu
 John:	jjmontel@calpoly.edu
 
+# Introduction
+This years ME 405 term project centered around the construction of "Romi", a small robot kit by Polulu. The computer controlling Romi is a STM32 NUCLEO-L476RG, with an additional power distributin board to proivde safe power, and a " The purpose was to gain hands on expierence with wiring motors and sensors, creating structured and adaptable code with the goal of creating a reliable closed feedback system that would be tested on a playing field.
+
 # Hardware
 
 | Name | Description | Quantity |
@@ -20,6 +23,7 @@ John:	jjmontel@calpoly.edu
 |   32U4 Board  |        Romi 32U4 Control Board          |   x 2    |
 |   Base Plate  |         Romi Chasis Base Plate          |   x 1    |
 |   Gear Motors |     120:1 Mini Plastic Gear Motors      |   x 2    |
+|   Quadrature Encoders |12 counts per revolution magnetic encoders |   x 2    |
 |   Motor Clip  |        Romi Chasis Motor Clips          |   x 2    |
 |     Wheels    |        Polulu Wheel 70 x 8 mm           |   x 2    |
 |  Ball Casters |        Romi Chasis Ball Casters         |   x 2    |
