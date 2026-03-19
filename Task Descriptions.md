@@ -2,7 +2,7 @@
 This page will go more in depth into each individual task that is created and run in the cooperative scheduler. Each task will have an accompanying state transition diagram to demonstrate the changes in state for each FSM style task. An entire task diagram will then show the total framework for how each task cooperates with each other.
 
 ## Motor Task (task_motor)
-The motor task is responsible for changing motor speeds based on a setpoint value. There are two individual motor tasks in the scheduler: one for the right motor and one for the left motor. A PI controller is used to help change the motor effort to reach the setpoint speed. To handle turns, a steering value is calculated from the line following task and stored in a share for the motor task to use. Depending on which motor task is being run, the wheel is either slowed down or sped up according to the necessary turn direction. There are also clamps based on the motor effort set function and the error value to prevent any over shooting beyond hardware capabilities. Debugging can be done by enabling time and motor value falgs (velocity and position) from the user interface.
+The motor task is responsible for changing motor speeds based on a setpoint value. There are two individual motor tasks in the scheduler: one for the right motor and one for the left motor. A PI controller is used to help change the motor effort to reach the setpoint speed. To handle turns, a steering value is calculated from the line following task and stored in a share for the motor task to use. Depending on which motor task is being run, the wheel is either slowed down or sped up according to the necessary turn direction. There are also clamps based on the motor effort set function and the error value to prevent any over shooting beyond hardware capabilities. Debugging can be done by enabling time and motor value flags (velocity and position) from the user interface.
 
 ![Motor Task State Transition](Image/Motor_Task_State_Transition.png)
 
@@ -27,7 +27,7 @@ Entering these characters will allow the user to enable or disable line followin
   
 5. "q" or "Q"
 
-Entering these characters will allow the user to enable or disable queues. For ease of testing, some instances may not need the robot to store      and print data from the queues. By disabling the queues in these cases, the robot procesing power can be conserved for other uses.
+Entering these characters will allow the user to enable or disable queues. For ease of testing, some instances may not need the robot to store and print data from the queues. By disabling the queues in these cases, the robot processing power can be conserved for other uses.
    
 6. "t" or "T"
 
@@ -49,13 +49,13 @@ Different standardization, normalization, and filterting techniques are applied 
 
 ## State Estimation Task (task_state)
 
-The state estimation task is responsible for utilizing information from the BNO055 Inertial Measurement Unit (IMU), enocder readings, and motor effort values to do discretized predictions about the changes in state of the robot. The state estimation task utilizes discretized matrices (AD and BD) to give weights to certain values in the prediction of the state based on the robot's dynamic model and sensor readings combined. The discretized matrices matrices were pre-determined during the creation of this task and automatically stored inside the code. Once the observer has created it's predictions, these predictions are then also utilized to predict X and Y position which were not apart of the obserber's state vector. 
+The state estimation task is responsible for utilizing information from the BNO055 Inertial Measurement Unit (IMU), encoder readings, and motor effort values to do discretized predictions about the changes in state of the robot. The state estimation task utilizes discretized matrices (AD and BD) to give weights to certain values in the prediction of the state based on the robot's dynamic model and sensor readings combined. The discretized matrices were pre-determined during the creation of this task and automatically stored inside the code. Once the observer has created its predictions, these predictions are then also utilized to predict X and Y position which were not a part of the observer's state vector. 
 
 ![State Estimation Task State Transition](Image/State_Estimation_Task_State_Transition.png)
 
 
 ## Task Diagram
 
-The below diagram demonstrates how each task cooperates will each other in creating an adaptable Romi robot. The diamgram follows the Task Diagram format where shares are denoted with dotted lines and queues are denoted with solid lines. Each share/queue has it's corresponding data type and queue also has it's length. Each box represents a task running within the scheduler. The task boxes also include their corresponding period and priority that is defined when the task objects are appended to the task list. 
+The below diagram demonstrates how each task cooperates with each other in creating an adaptable Romi robot. The diamgram follows the Task Diagram format where shares are denoted with dotted lines and queues are denoted with solid lines. Each share/queue has its corresponding data type and queue also has its length. Each box represents a task running within the scheduler. The task boxes also include their corresponding period and priority that is defined when the task objects are appended to the task list. 
 
 ![Overall Task Diagram](Image/Romi_Task_Diagram.png)
