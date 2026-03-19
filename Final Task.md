@@ -45,7 +45,7 @@ Our team decided to complete this task as an implemented task in the scheduler, 
 ### 1. S0_IDLE
 In the idle state, the robot initializes preliminary parameters in preperation for the next state. With the motor flags not set to high yet, the high speed setpoint is set for the motors and line following is disabled. The idle state then sets the motor flags and observer flags to high before changing over to the sprint state.
 
-### 2. S1_SPRINT
+### 2. S1_FAST
 In the sprint state, the robot continues its high speed sprint. The sprint state actively reads the heading of the robot to try and find any possible drift that could occur from the sprint. It then corrects the motor speeds to help correct this possible drift as the robot approaches checkpoint 1. The absolute x-position of the robot is then compared to a "slow down distance" and once the slow down distance has been reached, the setpoint speed is changed to a much slower speed and line following is enabled before moving into the approach state.
 
 ### S2_APPROACH
