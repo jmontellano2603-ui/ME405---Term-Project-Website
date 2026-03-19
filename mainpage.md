@@ -12,10 +12,7 @@ John:	jjmontel@calpoly.edu
 This years ME 405 term project centered around the construction of "Romi", a small robot kit by Polulu. The computer controlling Romi is a STM32 NUCLEO-L476RG, with an additional power distributin board to proivde safe power, and a " The purpose was to gain hands on expierence with wiring motors and sensors, creating structured and adaptable code with the goal of creating a reliable closed feedback system that would be tested on a playing field.
 
 # Romi
-![](/Image/Romi_Front.jpg)
-![](/Image/Romi_Side.jpg)
-![](/Image/Romi_Back.jpg)
-![](/Image/Romi_Above.jpg)
+![](/Image/Romi_Orientation_Views.png)
 
 
 # Hardware
