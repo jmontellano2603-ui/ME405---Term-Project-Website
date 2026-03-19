@@ -8,7 +8,7 @@ Driver file that has class responsible for containing the functions related to g
 Contains the necessary classes to connect to and run the HC-05 bluetooth module.
 
 ### checkpoint_task.py
-Multi-state checkpoint task file that runs as a normal task within the scheduler for the end of term playfield. See Final Task MD for a more detailed layout.
+Multi-state checkpoint task file that runs as a normal task within the scheduler for the end of term playfield. See [Final Task](/Final%20Task.md/) for a more detailed layout.
 
 ### cotask.py
 File from the ME 405 library that contains the class and class functions for both task objects and task list objects. Responsible for the priority scheduler functions.
