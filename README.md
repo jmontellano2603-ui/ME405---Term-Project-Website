@@ -5,6 +5,7 @@
 This readme file will give a brief overview over the repository and basic details about the project
 
 ## Repository
+link to Github [here](https://github.com/jmontellano2603-ui/ME405---Term-Project-Website)
 - Used images and videos embedded into the website can be located in the [Image](/Image/) folder
 - Miscellaneous items such as CAD drawings can be located in the [MISC](/MISC/) folder
 - Details regarding the backend of our website created by Doxygen can be located in the [docs](/docs/) folder
