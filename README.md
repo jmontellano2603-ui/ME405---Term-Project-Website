@@ -70,7 +70,7 @@ Six tasks share states, tuning variables, and more through Share and Queue objec
 - checkpoint_task: Multi-State FSM for Game Board, 31ms period
 - task_user: User Interface for robot action customization, 0 ms period
 
-# Line Following
+## Line Following
 
 Line following is accomplished using a front mounted QTR-8A IR sensor that does dynamic thresholding from sensor readings and calculates a centroid position in mm from the sensor
 center. A PID controller (Kp=6.0, Ki=0.7, Kd=0.9) converts this error
