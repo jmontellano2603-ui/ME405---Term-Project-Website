@@ -1,3 +1,5 @@
+@page final_task Final Task Diagram
+
 # Final Project Task
 
 To complete the ME 405 term project, teams are tasked with using their completed robots through a playfield of specific checkpoints. The robots should follow each of the individual checkpoints in order and focus on not just speed at which the course is completed, but also for repeatability in performance. This page will describe the scenario and characteristics of the final task requirements and then demonstrate our teams solution in solving this task.
