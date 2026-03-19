@@ -76,13 +76,13 @@ $$
 
 Our Romi also has a front mounted button used for object detection. One of the pins (C8) is set up as a pull down input pin and is set high whenever the button is pressed and an object is detected. In reference to the game track, this tells Romi that the wall has been reached and to move backwards. This same process could be followed for more bump detection (buttons) attached, however our Romi only uses the 1 front mounted button.
 
-This is an image from our ![CAD](MISC/Romi.SLDPRT) that combines both our bump sensor mount (a button), and our Polulu line following sensor (QTRX-MD-08A)
-![Sensor CAD](/Image/romi%201.png)
+This is an image from our [CAD](/MISC/Romi.SLDPRT) that combines both our bump sensor mount (a button), and our Polulu line following sensor (QTRX-MD-08A)
+![Sensor CAD](/Image/romi%201.png/)
 
 
 # Video Demonstration
 
-See the robot complete a full lap [here](https://youtube.com/shorts/IOxTDhfyRBM)
+See the robot complete a full lap [here](https://youtube.com/shorts/_OimBy4oKCs)
 
 # Results
 
