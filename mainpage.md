@@ -46,6 +46,7 @@ This years ME 405 term project centered around the construction of "Romi", a sma
 # Software Architecture
 
 All control runs inside a cooperative round-robin scheduler from the cotask library (courtesy of Dr. JR Ridgley)
+Detailed explanations about each files purpose can be found in the [SRC Descriptions](SRC%20Descriptions.md)
 Six tasks share states, tuning variables, and more through Share and Queue objects:
 
 - task_motor (x2: Left and Right): PI velocity control, 31ms period
