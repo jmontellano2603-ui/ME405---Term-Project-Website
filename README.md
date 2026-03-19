@@ -30,7 +30,7 @@ $$
 
 
 ## Introduction
-This years ME 405 term project centered around the construction of "Romi", a small robot kit by Polulu. The computer controlling Romi is a STM32 NUCLEO-L476RG, with an additional power distributin board to proivde safe power, and a " The purpose was to gain hands on expierence with wiring motors and sensors, creating structured and adaptable code with the goal of creating a reliable closed feedback system that would be tested on a playing field.
+This years ME 405 term project centered around the construction of "Romi", a small robot kit by Polulu. The computer controlling Romi is a STM32 NUCLEO-L476RG, with an additional power distribution board to proivde safe power. The purpose was to gain hands on experience with wiring motors and sensors, creating structured and adaptable code with the goal of creating a reliable closed feedback system that would be tested on a playing field.
 
 ## Wiring
 [Wiring Diagram](/Image/Wiring%20Pinout.png)
@@ -42,8 +42,8 @@ This is an image from our [CAD](MISC/Romi.SLDPRT) that combines both our bump se
 [Sensor CAD](/Image/romi%201.png)
 
 ## Highlights
-- A problem we first discovered when driving the motors on Romi was that the left motor was stronger than the right one, given the same PWM signal. A solution that served us well throughout the quearter was calcualting the velocity of each wheel through encoder ticks, and using a PI controller for each wheel to target a velocity. This allowed our romi to drive straight, and later allowed us to dynamically change the target velocity of each wheel when following a line. There is only a small issue however when attempting to target a velocity that the right motor can acheieve but not the left, causing unintended turning.\
-- Our state estimator is accurate with an approximate ~2% margin of error after many hours of tuning. After many attempts we succefsul had a somewhat reasonable and reliable set of arrays, that we then tuned by multiplying our B array by the percent error. We repeated this process a few times, using various speeds and distances to not overtune to specific settings, until we were satisfied that the reaminaing error was casued by drift.
+- A problem we first discovered when driving the motors on Romi was that the left motor was stronger than the right one, given the same PWM signal. A solution that served us well throughout the quarter was calculating the velocity of each wheel through encoder ticks, and using a PI controller for each wheel to target a velocity. This allowed our romi to drive straight, and later allowed us to dynamically change the target velocity of each wheel when following a line. There is only a small issue however when attempting to target a velocity that the right motor can acheieve but not the left, causing unintended turning.\
+- Our state estimator is accurate with an approximate ~2% margin of error after many hours of tuning. After many attempts, we succefsul had a somewhat reasonable and reliable set of arrays, that we then tuned by multiplying our B array by the percent error. We repeated this process a few times, using various speeds and distances to not overtune to specific settings, until we were satisfied that the reaminaing error was casued by drift.
 
 ## BOM
 | Name | Description | Quantity |
