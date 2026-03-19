@@ -83,7 +83,7 @@ Below is an example of a one sensor reading, and how it is mnaipulated to find w
 |Inverted Strenth|0.07|0.14|0.47|0.87|1|0.54|0.27|0|
 
 $$
-\frac{0.07 \times 0 + 0.14 \times 8 + 0.47 \times 16 + 0.87 \times 24 + 1 \times 32 + 0.54 \times 40 + 0.27 \times 48 + 0 \times 56}{0.07 + 0.14 + 0.47 + 0.87 + 1 + 0.54 + 0.27 + 0} \approx 29.595 \, \text{mm}
+\frac{0.07 \times 0 + 0.14 \times 8 + 0.47 \times 16 + 0.87 \times 24 + 1 \times 32 + 0.54 \times 40 + 0.27 \times 48 + 0 \times 56}{0.07 + 0.14 + 0.47 + 0.87 + 1 + 0.54 + 0.27 + 0} \approx 29.595 \text{mm}
 $$
 
 ## State Estimation
