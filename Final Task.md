@@ -38,6 +38,15 @@ The final checkpoint is from checkpoint 4 to checkpoint 5. If avoiding the bonus
 ## Our Team's Process for the Final Task
 Now that the characteristics of the final task have been described, we can now describe how our team went about completing this task. 
 
-Our team decided to complete this task as an implemented task in the scheduler, similar to that of the motor, line following, and state estimation tasks. The task itself is a large multi-part FSM that transfers between states once it has reached certain corresponding aspects. Below is a revision on the playfield that shows where exactly each state of the FSM is. Following this will be a description of each state and how the state helps to complete the final task.
+Our team decided to complete this task as an implemented task in the scheduler, similar to that of the motor, line following, and state estimation tasks. The task itself is a large multi-part FSM that transfers between states once it has reached certain corresponding aspects. Below is a revision on the playfield that shows where exactly each state of the FSM is. 
 
 ![Motor Task State Transition](Image/Our_Teams_Final_Task.png)
+
+### 1. S0_IDLE
+In the idle state, the robot initializes preliminary parameters in preperation for the next state. With the motor flags not set to high yet, the high speed setpoint is set for the motors and line following is disabled. The idle state then sets the motor flags and observer flags to high before changing over to the sprint state.
+
+### 2. S1_SPRINT
+In the sprint state, the robot continues its high speed sprint. The sprint state actively reads the heading of the robot to try and find any possible drift that could occur from the sprint. It then corrects the motor speeds to help correct this possible drift as the robot approaches checkpoint 1. The absolute x-position of the robot is then compared to a "slow down distance" and once the slow down distance has been reached, the setpoint speed is changed to a much slower speed and line following is enabled before moving into the approach state.
+
+### S2_APPROACH
+In the approach state, 
