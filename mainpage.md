@@ -102,8 +102,9 @@ The robot successfully navigated the course. Key lessons learned throughout this
 - Cooperative scheduling of robot tasks and sharing of task information through Queues/Shares
 - Utilization of IMU and encoder informtation for more accurate and corrected state estimation
 
-
-
+@subpage src_descriptions
+@subpage task_descriptions
+@subpage final_task
 
 
 
