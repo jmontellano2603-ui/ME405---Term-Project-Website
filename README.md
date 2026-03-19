@@ -4,13 +4,13 @@
 ## Overview
 This readme file will give a brief overview over the repository and basic deatils about the project
 
-### Repository
+## Repository
 - Used images and videos embedded into the website can be located in the [Image](/Image/) folder
 - Miscellaneous items such as CAD drawings can be located in the [MISC](/MISC/) folder
 - Details regarding the backend of our website created by Doxygen can be located in the [docs](/docs/) folder
 - The final python files that controlled Romi and gathered sensor data can be located in the [src](/src/) folder
 
-### Overview
+## Overview
 First off, this class has been one of the most informative and enjoyable classes we have ever taken. We have learned an incredible amount regarding how enocoders work, coding structure, the encoding/decoding/transfer of data through binary and hexadecimal, how different communication protocals work (I2C, UART, ...), and so much more. With that said, it has also was very time consuming with many failures before success. Still, we agree it has been one of the most informative classes we have taken at Cal Poly.
 
 - To start this project, we began with getting familiar with communicating to the Nucleo through PuTTY by detecing a button press and toggling an LED light on the board.
@@ -59,7 +59,7 @@ This is an image from our [CAD](MISC/Romi.SLDPRT) that combines both our bump se
 |    Batteries  |   6 Rechargable AA Batteries   |   x 2    |
 |  QTRX-MD-08A  |     Line Following Sensor      |   x 1    |
 
-# Software Architecture
+## Software Architecture
 
 All control runs inside a cooperative round-robin scheduler from the cotask library (courtesy of Dr. JR Ridgley)
 Six tasks share states, tuning variables, and more through Share and Queue objects:
@@ -70,7 +70,7 @@ Six tasks share states, tuning variables, and more through Share and Queue objec
 - checkpoint_task: Multi-State FSM for Game Board, 31ms period
 - task_user: User Interface for robot action customization, 0 ms period
 
-# State Estimation
+## State Estimation
 
 The observer tracks four state variables:
 - s: forward displacement (mm)
@@ -83,7 +83,7 @@ Update law: x_{k+1} = AD * x_k + BD * u*_k
 Encoder positions, BNO055 heading and yaw rate, and motor effort values are used in the state estimation to do corrective predictions based on both the kinematics and physics of the Romi robot.
 Note: X and Y absolute positons are not included in the state estimation and are instead found through outside means (instantaneous velocity conversions over time).
 
-# Video Demonstration
+## Video Demonstration
 
 See the robot complete a full lap of the playfield [here](https://youtube.com/shorts/_OimBy4oKCs)
 
