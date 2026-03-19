@@ -1,17 +1,52 @@
 # ME 405 Term Project
 ## By John Urrutia and Pierce Baugher
 
+## Overview
+This readme file will give a brief overview over the repository and basic deatils about the project
+
+### Repository
+- Used images and videos embedded into the website can be located in the [Image](/Image/) folder
+- Miscelaneous items such as CAD drawings can be located in the [MISC](/MISC/) folder
+- Details regarding the backend of our website created by Doxygen can be located in th[docs](/docs/) folder
+- The final python files that controlled Romi and gathered sensor data can be located in the [src](/src/) folder
+
+### Overview
+First off, this class has been one of the most informative and enjoyable classes we have ever taken. We have learned an incredible amount regarding how enocoders work, coding structure, the encoding/decoding/transfer of data through binary and hexadecimal, how different communication protocals work (I2C, UART, ...), and so much more. With that said, it has also was very time consuming with many failures before success. Still, we agree it has been one of the most informative classes we have taken at Cal Poly.
+
+- To start this project, we began with getting familiar with communicating to the Nucleo through PuTTY by detecing a button pres and toggling an LED light on the board.
+- Next we assembled our Romi kit, attached our Nucleo, and wired our motors and encoders to the board. We programmed simple tests to control each wheel, and measure the encoder ticks.
+- We then used that information to calculate the velocity of each wheel by converting each tick into a distance measurement, time stamping when each tick position, and dividing that distance by the time difference.
+- Our next objective was to create tasks for each motor, as well as for a user interface, and run the tasks in a scheduler. This lets the drivers we created run cooperatively, as well lets us assign priority and a period of how often they should run to the tasks.
+- Then we enhanced our user interface, allowing the user to modify more aspects of the code like altering the target velocity, and Kp/Ki values used when targeting a velocity. We also setup autmatic data collection, printing the step responses alongside timestamps in csv format in order to create graphs of how well the PID controller reached and maintained the target velocity. This alongside the enhanced UI to quickly chnage Kp and Ki let us run many tests to find our optimal values.
+- We then incorporated the line following sensor we purchased from Polulu (QTRX-MD-08A). In order to do this, we added another "line_task" as well as another driver for interfacing and gathering information fom the sensor. This has its Kp, Ki, and Kd values that alter how much control this part of our program has over motor control depending on the location of the line. There were slight issues with Ki and Kp oversteering, so also included a clamp that only allows so much change in motor power to follow the line. In order to not need to calibrate our sensor every time, we thought it would be a good idea to normalize the sensor readings once it passed a certain threshold. That way, it allows Romi to "see" the line much more clearly in more conditions. This was talked about on our main webpage, but the following is an sample of sensor data, and how we calclated where the centroid of the line would be with it.
+ \frac{0.07 \times 0 + 0.14 \times 8 + 0.47 \times 16 + 0.87 \times 24 + 1 \times 32 + 0.54 \times 40 + 0.27 \times 48 + 0 \times 56}{0.07 + 0.14 + 0.47 + 0.87 + 1 + 0.54 + 0.27 + 0} \approx 28.595 \, \text{mm}
+-  The final sensor we integrated was a BNO055 9-DOF sensor. Setting up the driver for this sesnor was not easy, and required a lot of reading documentation and learning about the various registers that can be used in the BNO055 sensor. Once we were able to get data from it, we utilized it to to create a state estimation program to estimate the robots location. This part of the project was by far the most difficult and time consuing, and requried lots of array math in matlab to find suitable arrays that were somewhat accurate.
+-  The final part of this project was utilizing all of the drivers and sensors to complete a course designed by the professor. A video fo our robot completing this course can be found on our website as well. We designed a FSM to seperate the course in states, and to be able to easily optimize each state to be completed as quickly as possible.
+-  
+![Course](/Image/Final_Task_Playfield.png)
+The program to complete the course goes as follows:
+1. Sprints 950mm using the state estimator in a straight line, while using weak line following to maintain course, tageting a velocity of 650 mm/s
+2. Line follow until a heading change of 90 degrees from its startup has reached
+3. Continue for another 50 mm before executing another 90 degree CW turn
+4. Continue forward slowly until the bump sensor has activated
+5. Once activaed, move in reverse for 50 mm at 80 mm/s
+6. Perform a 90 degree CCW turn, and continue for another 310 mm
+7. Turn another 90 degrees CW
+8. Line follow the sine wave line at a speed of 60 mm/s, until the robot has traveled 950 mm in the x direction from when it began line follwing.
+9. Target heading of 300 degrees, then move forward for 400 mm
+10. Then turn to a heading of 270, and move forward another 350mm, completing the track
+
 ## Introduction
 This years ME 405 term project centered around the construction of "Romi", a small robot kit by Polulu. The computer controlling Romi is a STM32 NUCLEO-L476RG, with an additional power distributin board to proivde safe power, and a " The purpose was to gain hands on expierence with wiring motors and sensors, creating structured and adaptable code with the goal of creating a reliable closed feedback system that would be tested on a playing field.
 
 ## Wiring
-![Wiring Diagram](/Image/Wiring%20Pinout.png)
-![](/Image/Wiring%20Pinout%202.png)
-![](/Image/Wiring%20Pinout%203.png)
+[Wiring Diagram](/Image/Wiring%20Pinout.png)
+[](/Image/Wiring%20Pinout%202.png)
+[](/Image/Wiring%20Pine out%203.png)
 
 ## Sensor Mount
-This is an image from our ![CAD](MISC/Romi.SLDPRT) that combines both our bump sensor mount (a button), and our Polulu line following sensor (QTRX-MD-08A)
-![Sensor CAD](/Image/romi%201.png)
+This is an image from our [CAD](MISC/Romi.SLDPRT) that combines both our bump sensor mount (a button), and our Polulu line following sensor (QTRX-MD-08A)
+[Sensor CAD](/Image/romi%201.png)
 
 ## Highlights
 - A problem we first discovered when driving the motors on Romi was that the left motor was stronger than the right one, given the same PWM signal. A solution that served us well throughout the quearter was calcualting the velocity of each wheel through encoder ticks, and using a PI controller for each wheel to target a velocity. This allowed our romi to drive straight, and later allowed us to dynamically change the target velocity of each wheel when following a line. There is only a small issue however when attempting to target a velocity that the right motor can acheieve but not the left, causing unintended turning.\
