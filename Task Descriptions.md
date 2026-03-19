@@ -1,3 +1,5 @@
+@page task_descriptions Task Descriptions
+
 # Task Descriptions
 This page will go more in depth into each individual task that is created and run in the cooperative scheduler. Each task will have an accompanying state transition diagram to demonstrate the changes in state for each FSM style task. An entire task diagram will then show the total framework for how each task cooperates with each other.
 
