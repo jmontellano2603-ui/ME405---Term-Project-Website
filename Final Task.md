@@ -64,19 +64,28 @@ Within state 5, the robot moves forward still at the slow speed setpoint since w
 In the reverse state, the robot move backwards a set amount of distance to line up to exit the garage. This distance can be edited from the constants at the top of the task. This distance had to be closely tuned to avoid not backing up enough before moving into the next state. Using the state estimation, once the robot has reached the set backwards distance then we move into state 7.
 
 ### S7_SPIN_3
-In state 7, the robot rotates a set amount from the constants section (HEADING_SPIN_DEG). Similar to entering, the rotation amount must be heavily tuned to avoid hitting the bars/wall of the garage. This means that the rotation constant is actually less than the theoretical 90 degrees from the ideal path.
+In state 7, the robot rotates a set amount from the constants section (HEADING_SPIN_DEG). Similar to entering, the rotation amount must be heavily tuned to avoid hitting the bars/wall of the garage. This means that the rotation constant is actually less than the theoretical 90 degrees from the ideal path. Once the change in heading has reached this set constant, then we move into state 8.
+
 ### S8_STRAIGHT_3
+In state 8, the robot moves foward a set amount of distance similar to state 3. This moves the robot out of the garage an on top of checkpoint 2. Once this constant distance has been moved as evaluated by the state estimator, then the robot moves into state 9.
 
 ### S9_SPIN_4
+State 9 follows a similar format to states 4 and 7. This is a controlled 90 degree turn to face the robot forward toward the slalom. However, at the end of state 9, the line follower is reenabled as we move into state 10.
 
 ### S10_LINE
+State 10 uses line following to navigate through the slalom. The gain constants were tuned prior to the final presentation to help avoid deductions from the ping pong balls. Specifically, the Kd constant had to be increased to help the robot to correct harder around the tight turns of the slalom. The slalom seperates checkpoint 2 from checkpoint 3 and the robot knows it has ended this section once the change in X position has reached a set point. Since each checkpoint has a known distance, this distance can be easily found and set as a constant. This constant is then adjusted to help with drift from the state estimator. Once the change in X distance has been reached, the disables the line following and stops before switching to state 11.
 
 ### S11_SPIN_5
+In the final stretch of the course, the lines could be used to navigate, but our team has decided to ignore these lines and rely on our state estimator to navigate to each of the final checkpoints. In prior testing, our state estimator has been highly accurate so we decided to avoid line following. In this state, the robot rotates about checkpoint 3 to face toward checkpoint 4. Once this heading has been reached, then we move over to state 12.
 
 ### S12_FORWARD_4
+Within state 12, we move from directly in a straight line from checkpoint 3 to checkpoint 4 after aligning the heading during state 11. Once the robot has reached a set traveled distance from checkpoint 3 to reach checkpoint 4, then we move into state 13.
 
 ### S13_SPIN_6
+States 13 and 14 follow a similar format to the previous 2 states. The first state helps to align the robot toward the next checkpoint and then the state after directs the robot toward it. State 13 is the alignment state that rotates the robot toward checkpoint 5 which then leads to state 14.
 
 ### S14_FORWARD_5
+State 14 is the final movement state that moves the robot forward toward checkpoint 5 once it has been aligned in the previous state. Once over checkpoint 5 (the final checkpoint), then the robot moves to the final state 15.
 
 ### S15_STOP
+State 15 sets all movement functions to 0 by setting all setpoint speed/steer values to 0, setting all go flags to false and disabling all motors. With the robot returned to its original position at checkpoint 0/5, the course has been completed. 
