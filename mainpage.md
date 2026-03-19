@@ -27,14 +27,6 @@ John:	jjmontel@calpoly.edu
 |     Button    |     Bump Switch for object detection    |   x 1    |
 
 
-- STM32 L476RG microcontroller with Shoe of Brian Attachment
-- Pololu Romi chassis with motor driver and power distribution board (dual DRV8838)
-- BNO055 Inertial Measurement Unit (IMU)
-- QTR-8A analog IR line sensor array
-- Quadrature wheel encoders
-- HC-05 Bluetooth module
-- Front mounted bump switch 
-
 # Wiring
 ![Wiring Diagram](/Image/Wiring%20Pinout.png)
 ![](/Image/Wiring%20Pinout%202.png)
