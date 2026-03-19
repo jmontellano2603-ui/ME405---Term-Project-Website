@@ -4,7 +4,7 @@ To complete the ME 405 term project, teams are tasked with using their completed
 
 ## The Final Task
 
-
+![Motor Task State Transition](Image/Final_Task_Playfield.png)
 
 Above is an image of the playfield given to the teams for the final task. This section will walkthrough the requirements for each section of the final task and outline some of the bonuses/penalties that are available on the playfield. 
 
