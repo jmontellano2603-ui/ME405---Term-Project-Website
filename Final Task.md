@@ -35,3 +35,9 @@ The final bonus is to push a plastic cup out of the ring next to the wall of the
 The final checkpoint is from checkpoint 4 to checkpoint 5. If avoiding the bonus cup near the wall, the teams would need to rotate to the opposite heading from which they started at and then line follow again back through the Y-section and this time take the path up to checkpoint 5. This would serve as the end of the course as checkpoint 5 and checkpoint 0 are the same spot. 
 
 
+## Our Team's Process for the Final Task
+Now that the characteristics of the final task have been described, we can now describe how our team went about completing this task. 
+
+Our team decided to complete this task as an implemented task in the scheduler, similar to that of the motor, line following, and state estimation tasks. The task itself is a large multi-part FSM that transfers between states once it has reached certain corresponding aspects. Below is a revision on the playfield that shows where exactly each state of the FSM is. Following this will be a description of each state and how the state helps to complete the final task.
+
+![Motor Task State Transition](Image/Our_Teams_Final_Task.png)
