@@ -1,5 +1,5 @@
 # ME 405 Term Project
-## By John Urrutia and Pierce Baugher
+### By John Urrutia and Pierce Baugher
 
 ## Overview
 This readme file will give a brief overview over the repository and basic deatils about the project
