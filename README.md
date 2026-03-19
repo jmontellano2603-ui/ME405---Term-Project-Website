@@ -82,3 +82,8 @@ Update law: x_{k+1} = AD * x_k + BD * u*_k
 
 Encoder positions, BNO055 heading and yaw rate, and motor effort values are used in the state estimation to do corrective predictions based on both the kinematics and physics of the Romi robot.
 Note: X and Y absolute positons are not included in the state estimation and are instead found through outside means (instantaneous velocity conversions over time).
+
+# Video Demonstration
+
+See the robot complete a full lap of the playfield [here](https://youtube.com/shorts/_OimBy4oKCs)
+
