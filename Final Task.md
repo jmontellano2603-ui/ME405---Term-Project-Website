@@ -49,4 +49,34 @@ In the idle state, the robot initializes preliminary parameters in preperation f
 In the sprint state, the robot continues its high speed sprint. The sprint state actively reads the heading of the robot to try and find any possible drift that could occur from the sprint. It then corrects the motor speeds to help correct this possible drift as the robot approaches checkpoint 1. The absolute x-position of the robot is then compared to a "slow down distance" and once the slow down distance has been reached, the setpoint speed is changed to a much slower speed and line following is enabled before moving into the approach state.
 
 ### S2_APPROACH
-In the approach state, 
+In the approach state, the robot activates the line following at the much lower setpoint speed. This allows more time for correction and for more precise movement around the turn. At the same time, the IMU is tracking the change in heading. Once the IMU detects a change in heading of 75 degrees from the beginning of the state, then it switches to the first straight state. Theoretically, this value should be a 90 degree change but due to drift and variation in runs, the set value of 75 proved to be more a better adjusted value.
+
+### S3_STRAIGHT
+This state is simply to get the robot within the garage without bumping into any of the bars of the enclosure. The line following is turned off and state estimtion is used to drive the robot forward a set distance. Once this set distance is met, then we change over to state 4.
+
+### S4_SPIN_2
+In this first sping state, the robot is to pivot 90 degrees to face forward towards the wall while inside the garage. Some refinement must be done with the variables so that the front mounted bump sensor does not collide with the poles of the garage. The robot also turns based on 180 degrees from the INITIAL heading. Based on the theoretical travel path, a 180 degree difference from the initial heading would face the robot toward the wall. This is to help overcome any drift in heading that may have occured from the previous 3 states. Once the robot has detected this change in heading, it moves into state 5.
+
+### S5_WALL
+Within state 5, the robot moves forward still at the slow speed setpoint since we are inside the garage. It continues to move forward until the bump sensor activates. The bump sensor is hooked up such that once side is always high and the other side is connected to an input pin configured with a pull down resistor. This means the input pin is always low unless an obstacle has been ran into and then sets the pin high. This allows us to quickly stop the robot once the bump sensor has changed state. Once this condition does happen, the setpoint speed is changed to negative to make the robot move backwards and we change over to state 6.
+
+### S6_REVERSE
+In the reverse state, the robot move backwards a set amount of distance to line up to exit the garage. This distance can be edited from the constants at the top of the task. This distance had to be closely tuned to avoid not backing up enough before moving into the next state. Using the state estimation, once the robot has reached the set backwards distance then we move into state 7.
+
+### S7_SPIN_3
+In state 7, the robot rotates a set amount from the constants section (HEADING_SPIN_DEG). Similar to entering, the rotation amount must be heavily tuned to avoid hitting the bars/wall of the garage. This means that the rotation constant is actually less than the theoretical 90 degrees from the ideal path.
+### S8_STRAIGHT_3
+
+### S9_SPIN_4
+
+### S10_LINE
+
+### S11_SPIN_5
+
+### S12_FORWARD_4
+
+### S13_SPIN_6
+
+### S14_FORWARD_5
+
+### S15_STOP
