@@ -25,7 +25,7 @@ $$
 $$
 
 -  The final sensor we integrated was a BNO055 9-DOF sensor. Setting up the driver for this sesnor was not easy, and required a lot of reading documentation and learning about the various registers that can be used in the BNO055 sensor. Once we were able to get data from it, we utilized it to create a state estimation program to estimate the robots location. This part of the project was by far the most difficult and time consuing, and requried lots of array math in matlab to find suitable arrays that were somewhat accurate.
--  The final part of this project was utilizing all of the drivers and sensors to complete a course designed by the professor. A video of our robot completing this course can be found on our website as well. We designed a FSM to seperate the course in states, and to be able to easily optimize each state to be completed as quickly as possible. To view how we tackled each part of the course, view [Final Task](/Final%20Task/)
+-  The final part of this project was utilizing all of the drivers and sensors to complete a course designed by the professor. A video of our robot completing this course can be found on our website as well. We designed a FSM to seperate the course in states, and to be able to easily optimize each state to be completed as quickly as possible. To view how we tackled each part of the course, view [Final Task](/Final%20Task.md/)
 ![Course](/Image/Final_Task_Playfield.png)
 
 
