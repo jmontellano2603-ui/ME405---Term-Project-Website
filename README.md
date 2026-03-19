@@ -58,3 +58,27 @@ This is an image from our [CAD](MISC/Romi.SLDPRT) that combines both our bump se
 |  Ball Casters |    Romi Chasis Ball Casters    |   x 2    |
 |    Batteries  |   6 Rechargable AA Batteries   |   x 2    |
 |  QTRX-MD-08A  |     Line Following Sensor      |   x 1    |
+
+# Software Architecture
+
+All control runs inside a cooperative round-robin scheduler from the cotask library (courtesy of Dr. JR Ridgley)
+Six tasks share states, tuning variables, and more through Share and Queue objects:
+
+- task_motor (x2: Left and Right): PI velocity control, 31ms period
+- task_line: PID line following using IR Sensor, 22ms period  
+- task_state: State Estimation using IMU and Encoders, 31ms period
+- checkpoint_task: Multi-State FSM for Game Board, 31ms period
+- task_user: User Interface for robot action customization, 0 ms period
+
+# State Estimation
+
+The observer tracks four state variables:
+- s: forward displacement (mm)
+- psi: heading (rad)
+- omL: left wheel angular speed (rad/s)
+- omR: right wheel angular speed (rad/s)
+
+Update law: x_{k+1} = AD * x_k + BD * u*_k
+
+Encoder positions, BNO055 heading and yaw rate, and motor effort values are used in the state estimation to do corrective predictions based on both the kinematics and physics of the Romi robot.
+Note: X and Y absolute positons are not included in the state estimation and are instead found through outside means (instantaneous velocity conversions over time).
