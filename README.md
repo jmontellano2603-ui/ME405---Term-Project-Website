@@ -38,7 +38,7 @@ This years ME 405 term project centered around the construction of "Romi", a sma
 [](/Image/Wiring%20Pine%20out%203.png)
 
 ## Sensor Mount
-This is an image from our [CAD](MISC/Romi.SLDPRT) that combines both our bump sensor mount (a button), and our Polulu line following sensor (QTRX-MD-08A)
+This is an image from our [CAD](MISC/Romi.SLDPRT) that combines both our bump sensor mount (a button), and our Polulu line following sensor (QTRX-MD-08A). This part is front mounted so that we can detect object collisions when moving forward and detect lines ahead of us. This helps to give the robot time to process the readings from the line sensor and then act on them once the robot is above that detected point.
 [Sensor CAD](/Image/romi%201.png)
 
 ## Highlights
