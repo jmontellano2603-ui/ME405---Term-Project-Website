@@ -1,0 +1,27 @@
+var classtask__motor_1_1task__motor =
+[
+    [ "__init__", "classtask__motor_1_1task__motor.html#a9f22aea6e8adc6f9ab567440ef5cd118", null ],
+    [ "run", "classtask__motor_1_1task__motor.html#a53301aa4a7c62727c01be2154bc157f3", null ],
+    [ "_change", "classtask__motor_1_1task__motor.html#aa4120acfc8b0cd24c8884b39e86df80c", null ],
+    [ "_dataValues", "classtask__motor_1_1task__motor.html#ab253b094683dfc1b1d95742191e1af29", null ],
+    [ "_effort_share", "classtask__motor_1_1task__motor.html#ae2280b34cbaec183a6bf7f2b22a896b0", null ],
+    [ "_enc", "classtask__motor_1_1task__motor.html#a36aabbaf4c2661d294a07835212d3bee", null ],
+    [ "_error", "classtask__motor_1_1task__motor.html#a7a5972b3724859d459f0b994093907dc", null ],
+    [ "_goFlag", "classtask__motor_1_1task__motor.html#a9dfe05bf219bb52e2ee292e2defe33d4", null ],
+    [ "_integral", "classtask__motor_1_1task__motor.html#aa39a27ac818108936845333e2e2331dc", null ],
+    [ "_mot", "classtask__motor_1_1task__motor.html#a60bbba740ffa1579a79b0e1f062ec6f3", null ],
+    [ "_obs_go", "classtask__motor_1_1task__motor.html#aec02d5eb638f9ba7b2beddacf3d184b8", null ],
+    [ "_print_ctr", "classtask__motor_1_1task__motor.html#a46215ecc1de39cdc3525b7d7031a8846", null ],
+    [ "_setpoint", "classtask__motor_1_1task__motor.html#a0f35b04ffcb90e1b92e75b80af9608e7", null ],
+    [ "_setpoint_value", "classtask__motor_1_1task__motor.html#ad5143e55905fd3ac61ed6cfedc58374f", null ],
+    [ "_side", "classtask__motor_1_1task__motor.html#a29e77f26e035dab7f13edcfbc80db800", null ],
+    [ "_startTime", "classtask__motor_1_1task__motor.html#abd15b22b682b191f4a9c0e01ef30bfa9", null ],
+    [ "_state", "classtask__motor_1_1task__motor.html#a28cda1af768fa4759c8c11fac2f2e983", null ],
+    [ "_steer_value", "classtask__motor_1_1task__motor.html#a3854bc06aa22cb11967be7b1cf091539", null ],
+    [ "_timeValues", "classtask__motor_1_1task__motor.html#a8dde7c4cee76842ba3800318db3d826e", null ],
+    [ "_velValues", "classtask__motor_1_1task__motor.html#a631b3626bbd15189e095b85f41ee01c0", null ],
+    [ "ki_value", "classtask__motor_1_1task__motor.html#adb284e68d7132337305ea84bf923ac74", null ],
+    [ "kp_value", "classtask__motor_1_1task__motor.html#af642ae2109cde6dffd0af61d426e114d", null ],
+    [ "queue_enable", "classtask__motor_1_1task__motor.html#a39fd86ee73727edea1214b9cf90a970d", null ],
+    [ "time_disable", "classtask__motor_1_1task__motor.html#a1074453a8ea85d2eebb8be2496a21010", null ]
+];
