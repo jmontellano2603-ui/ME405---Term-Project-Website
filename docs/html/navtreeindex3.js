@@ -1,5 +1,6 @@
 var NAVTREEINDEX3 =
 {
+"namespacemain.html#addc40cdd30127b3ce6f0f9459062855a":[1,0,6,1],
 "namespacemain.html#ae5a51af4608b76928915e1c99022335c":[1,0,6,22],
 "namespacemain.html#ae701983592736ef095bf138d981fc12a":[1,0,6,11],
 "namespacemain.html#aeb60c160f668afc2f75fc00753d49852":[1,0,6,7],
@@ -40,7 +41,7 @@ var NAVTREEINDEX3 =
 "namespacetask__user.html#ac3ab2f7ea883c85ffee3851ef2bc8995":[1,0,12,3],
 "namespacetask__user.html#ad172b5aee322276b27b03b3e3dd99680":[1,0,12,1],
 "pages.html":[],
-"src_descriptions.html":[0,11],
+"src_descriptions.html":[0,12],
 "task__line_8py.html":[3,0,0,8],
 "task__line_8py_source.html":[3,0,0,8],
 "task__motor_8py.html":[3,0,0,9],
@@ -51,5 +52,5 @@ var NAVTREEINDEX3 =
 "task__state_8py_source.html":[3,0,0,11],
 "task__user_8py.html":[3,0,0,12],
 "task__user_8py_source.html":[3,0,0,12],
-"task_descriptions.html":[0,12]
+"task_descriptions.html":[0,13]
 };

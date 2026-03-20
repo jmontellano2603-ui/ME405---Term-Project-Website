@@ -120,7 +120,7 @@ var NAVTREEINDEX2 =
 "encoder_8py.html":[3,0,0,4],
 "encoder_8py_source.html":[3,0,0,4],
 "files.html":[3,0],
-"final_task.html":[0,13],
+"final_task.html":[0,14],
 "functions.html":[2,3,0],
 "functions.html":[2,3,0,0],
 "functions_a.html":[2,3,0,1],
@@ -154,6 +154,7 @@ var NAVTREEINDEX2 =
 "index.html#autotoc_md0":[0,0],
 "index.html#autotoc_md1":[0,1],
 "index.html#autotoc_md10":[0,10],
+"index.html#autotoc_md11":[0,11],
 "index.html#autotoc_md2":[0,2],
 "index.html#autotoc_md3":[0,3],
 "index.html#autotoc_md4":[0,4],
@@ -248,6 +249,5 @@ var NAVTREEINDEX2 =
 "namespacemain.html#accca0f68a113752d73219562dd3924a5":[1,0,6,42],
 "namespacemain.html#acd0f0ea1cbcb91cf057c81fdceb8acbd":[1,0,6,0],
 "namespacemain.html#ad349baace641e69b4eccd49bc1480b18":[1,0,6,14],
-"namespacemain.html#ad5354d323b6230357e319abe41f04681":[1,0,6,5],
-"namespacemain.html#addc40cdd30127b3ce6f0f9459062855a":[1,0,6,1]
+"namespacemain.html#ad5354d323b6230357e319abe41f04681":[1,0,6,5]
 };

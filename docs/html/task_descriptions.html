@@ -100,14 +100,14 @@ $(function(){initNavTree('task_descriptions.html','',''); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>This page will go more in depth into each individual task that is created and run in the cooperative scheduler. Each task will have an accompanying state transition diagram to demonstrate the changes in state for each FSM style task. An entire task diagram will then show the total framework for how each task cooperates with each other.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md24"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md25"></a>
 Motor Task (task_motor)</h2>
 <p>The motor task is responsible for changing motor speeds based on a setpoint value. There are two individual motor tasks in the scheduler: one for the right motor and one for the left motor. A PI controller is used to help change the motor effort to reach the setpoint speed. To handle turns, a steering value is calculated from the line following task and stored in a share for the motor task to use. Depending on which motor task is being run, the wheel is either slowed down or sped up according to the necessary turn direction. There are also clamps based on the motor effort set function and the error value to prevent any over shooting beyond hardware capabilities. Debugging can be done by enabling time and motor value flags (velocity and position) from the user interface.</p>
 <div class="image">
 <img src="Motor_Task_State_Transition.png" alt=""/>
 <div class="caption">
 Motor Task State Transition</div></div>
-    <h2 class="doxsection"><a class="anchor" id="autotoc_md25"></a>
+    <h2 class="doxsection"><a class="anchor" id="autotoc_md26"></a>
 User Interface Task (user_task)</h2>
 <p>The user interface task is responsible for interacting with the user from the PuTTY port to activate certain aspects of the robot. The user is to input certain characters to change or activate various things. The following inputs are possible ways to interact with the user interface to change the control of the robot:</p>
 <ol type="1">
@@ -143,7 +143,7 @@ User Interface Task (user_task)</h2>
 <img src="User_Task_State_Transition.png" alt=""/>
 <div class="caption">
 User Task State Transition</div></div>
-    <h2 class="doxsection"><a class="anchor" id="autotoc_md26"></a>
+    <h2 class="doxsection"><a class="anchor" id="autotoc_md27"></a>
 Line Following Task (task_line)</h2>
 <p>The Line Following Task is responsible for calculating steering correction signals for the motors when in line following scenarios. See State Estimation task for turning in non-line following scenarios. The task utilizes the QTR-8A IR sensor driver (<a class="el" href="line__follower_8py.html">line_follower.py</a>) to find an error signal and utilize this signal in the PID controller. As the sensor driver calculates a distance to the centroid of the detected line from the center of the sensor, this distance is directly used as the error for the PID controller. The PID controller then converts the error signal into a steering signal that is sent to the motor task through a share to correct the speed of the motors.</p>
 <p>Different standardization, normalization, and filtering techniques are applied to the line following task to help reduce any noise or possible misreads from the sensor that could cause issues when running. For example, the task takes multiple samples to reduce possible noise and then standardizes the readings based on the minimum and maximum values observed during one capture. Some other features like lost line holds, steer clamps, and filters to remove sensor noise have also been added in to refine the operation of the task.</p>
@@ -151,14 +151,14 @@ Line Following Task (task_line)</h2>
 <img src="Line_Following_Task_State_Transition.png" alt=""/>
 <div class="caption">
 Line Following Task State Transition</div></div>
-    <h2 class="doxsection"><a class="anchor" id="autotoc_md27"></a>
+    <h2 class="doxsection"><a class="anchor" id="autotoc_md28"></a>
 State Estimation Task (task_state)</h2>
 <p>The state estimation task is responsible for utilizing information from the <a class="el" href="namespace_b_n_o055.html">BNO055</a> Inertial Measurement Unit (IMU), encoder readings, and motor effort values to do discretized predictions about the changes in state of the robot. The state estimation task utilizes discretized matrices (AD and BD) to give weights to certain values in the prediction of the state based on the robot's dynamic model and sensor readings combined. The discretized matrices were pre-determined during the creation of this task and automatically stored inside the code. Once the observer has created its predictions, these predictions are then also utilized to predict X and Y position which were not a part of the observer's state vector.</p>
 <div class="image">
 <img src="State_Estimation_Task_State_Transition.png" alt=""/>
 <div class="caption">
 State Estimation Task State Transition</div></div>
-    <h2 class="doxsection"><a class="anchor" id="autotoc_md28"></a>
+    <h2 class="doxsection"><a class="anchor" id="autotoc_md29"></a>
 Task Diagram</h2>
 <p>The below diagram demonstrates how each task cooperates with each other in creating an adaptable Romi robot. The diamgram follows the Task Diagram format where shares are denoted with dotted lines and queues are denoted with solid lines. Each share/queue has its corresponding data type and queue also has its length. Each box represents a task running within the scheduler. The task boxes also include their corresponding period and priority that is defined when the task objects are appended to the task list.</p>
 <div class="image">
