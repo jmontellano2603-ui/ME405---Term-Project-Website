@@ -1,12 +1,10 @@
-@page final_task Final Task Diagram
+@page final_task Final Task
 
-# Final Project Task
-
-To complete the ME 405 term project, teams are tasked with using their completed robots through a playfield of specific checkpoints. The robots should follow each of the individual checkpoints in order and focus on not just speed at which the course is completed, but also for repeatability in performance. This page will describe the scenario and characteristics of the final task requirements and then demonstrate our teams solution in solving this task.
+To complete the ME 405 term project, teams are tasked with using their completed robots through a playfield of specific checkpoints. The robots should follow each of the individual checkpoints in order and focus on not just speed at which the course is completed, but also for repeatability in performance. This page will describe the scenario and characteristics of the final task requirements and then demonstrate our team's solution in solving this task.
 
 ## The Final Task
 
-![Motor Task State Transition](Image/Final_Task_Playfield.png)
+![Final Task Playfield](Image/Final_Task_Playfield.png)
 
 Above is an image of the playfield given to the teams for the final task. This section will walkthrough the requirements for each section of the final task and outline some of the bonuses/penalties that are available on the playfield. 
 
@@ -57,7 +55,7 @@ In the approach state, the robot activates the line following at the much lower 
 This state is simply to get the robot within the garage without bumping into any of the bars of the enclosure. The line following is turned off and state estimation is used to drive the robot forward a set distance. Once this set distance is met, then we change over to state 4.
 
 ### S4_SPIN_2
-In this first spin state, the robot is to pivot 90 degrees to face forward towards the wall while inside the garage. Some refinement must be done with the variables so that the front mounted bump sensor does not collide with the poles of the garage. The robot also turns based on 180 degrees from the INITIAL heading. Based on the theoretical travel path, a 180 degree difference from the initial heading would face the robot toward the wall. This is to help overcome any drift in heading that may have occured from the previous 3 states. Once the robot has detected this change in heading, it moves into state 5.
+In this first spin state, the robot is to pivot 90 degrees to face forward towards the wall while inside the garage. Some refinement must be done with the variables so that the front mounted bump sensor does not collide with the poles of the garage. The robot also turns based on 180 degrees from the INITIAL heading. Based on the theoretical travel path, a 180 degree difference from the initial heading would face the robot toward the wall. This is to help overcome any drift in heading that may have occurred from the previous 3 states. Once the robot has detected this change in heading, it moves into state 5.
 
 ### S5_WALL
 Within state 5, the robot moves forward still at the slow speed setpoint since we are inside the garage. It continues to move forward until the bump sensor activates. The bump sensor is hooked up such that once side is always high and the other side is connected to an input pin configured with a pull down resistor. This means the input pin is always low unless an obstacle has been ran into and then sets the pin high. This allows us to quickly stop the robot once the bump sensor has changed state. Once this condition does happen, the setpoint speed is changed to negative to make the robot move backwards and we change over to state 6.
@@ -69,7 +67,7 @@ In the reverse state, the robot move backwards a set amount of distance to line 
 In state 7, the robot rotates a set amount from the constants section (HEADING_SPIN_DEG). Similar to entering, the rotation amount must be heavily tuned to avoid hitting the bars/wall of the garage. This means that the rotation constant is actually less than the theoretical 90 degrees from the ideal path. Once the change in heading has reached this set constant, then we move into state 8.
 
 ### S8_STRAIGHT_3
-In state 8, the robot moves foward a set amount of distance similar to state 3. This moves the robot out of the garage and on top of checkpoint 2. Once this constant distance has been moved as evaluated by the state estimator, then the robot moves into state 9.
+In state 8, the robot moves forward a set amount of distance similar to state 3. This moves the robot out of the garage and on top of checkpoint 2. Once this constant distance has been moved as evaluated by the state estimator, then the robot moves into state 9.
 
 ### S9_SPIN_4
 State 9 follows a similar format to states 4 and 7. This is a controlled 90 degree turn to face the robot forward toward the slalom. However, at the end of state 9, the line follower is reenabled as we move into state 10.

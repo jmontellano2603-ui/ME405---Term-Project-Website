@@ -1,6 +1,5 @@
 @page task_descriptions Task Descriptions
 
-# Task Descriptions
 This page will go more in depth into each individual task that is created and run in the cooperative scheduler. Each task will have an accompanying state transition diagram to demonstrate the changes in state for each FSM style task. An entire task diagram will then show the total framework for how each task cooperates with each other.
 
 ## Motor Task (task_motor)
@@ -13,19 +12,19 @@ The user interface task is responsible for interacting with the user from the Pu
 
 1. "h" or "H"
    
-Entering these characters will print the help menu for the robot. This help menu will help users debug and create new things with just a quick      description. Run our code to see this new tool!   
+Entering these characters will print the help menu for the robot. This help menu will help users debug and create new things with just a quick description.  
   
 2. "k" or "K"
 
-Entering these characters will allow the user to change the gain values for the PI motor speed controller. There are default values made with       the code, but these values can be changed through the user interface.
+Entering these characters will allow the user to change the gain values for the PI motor speed controller. There are default values made with the code, but these values can be changed through the user interface.
   
 3. "s" or "S"
 
-Entering these characters will allow the user to change the setpoint speed value for the motors. This value can be changed to debug and test the    controllers for the motors. 
+Entering these characters will allow the user to change the setpoint speed value for the motors. This value can be changed to debug and test the controllers for the motors. 
   
 4. "l" or "L"
 
-Entering these characters will allow the user to enable or disable line following for the robot. By default, line following is enabled and must     be turned off through the user interface or another task.
+Entering these characters will allow the user to enable or disable line following for the robot. By default, line following is enabled and must be turned off through the user interface or another task.
   
 5. "q" or "Q"
 
@@ -33,7 +32,7 @@ Entering these characters will allow the user to enable or disable queues. For e
    
 6. "t" or "T"
 
-Entering these characters will allow the user to enable and disable time value storage. Similar to the queue enable/disable, this function will     allow the user to not store and print time values when necessary.
+Entering these characters will allow the user to enable and disable time value storage. Similar to the queue enable/disable, this function will allow the user to not store and print time values when necessary.
    
 7. "g" or "G"
 
@@ -45,7 +44,7 @@ Entering these characters will allow the user to activate a step response from t
 
 The Line Following Task is responsible for calculating steering correction signals for the motors when in line following scenarios. See State Estimation task for turning in non-line following scenarios. The task utilizes the QTR-8A IR sensor driver (line_follower.py) to find an error signal and utilize this signal in the PID controller. As the sensor driver calculates a distance to the centroid of the detected line from the center of the sensor, this distance is directly used as the error for the PID controller. The PID controller then converts the error signal into a steering signal that is sent to the motor task through a share to correct the speed of the motors.
 
-Different standardization, normalization, and filterting techniques are applied to the line following task to help reduce any noise or possible misreads from the sensor that could cause issues when running. For example, the task takes multiple samples to reduce possible noise and then standardizes the readings based on the minimum and maximum values observed during one capture. Some other features like lost line holds, steer clamps, and filters to remove sensor noise have also been added in to refine the operation of the task.
+Different standardization, normalization, and filtering techniques are applied to the line following task to help reduce any noise or possible misreads from the sensor that could cause issues when running. For example, the task takes multiple samples to reduce possible noise and then standardizes the readings based on the minimum and maximum values observed during one capture. Some other features like lost line holds, steer clamps, and filters to remove sensor noise have also been added in to refine the operation of the task.
 
 ![Line Following Task State Transition](Image/Line_Following_Task_State_Transition.png)
 
