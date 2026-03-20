@@ -9,7 +9,7 @@ Pierce:	pbaugher@calpoly.edu
 John:	jjmontel@calpoly.edu
 
 # Introduction
-This year's ME 405 term project centered around the construction of "Romi", a small robot kit by Polulu. The computer controlling Romi is a STM32 NUCLEO-L476RG, with an additional power distribution board to provide safe power. The purpose was to gain hands on experience with wiring motors and sensors, creating structured and adaptable code with the goal of creating a reliable closed feedback system that would be tested on a playing field.
+This year's ME 405 term project centered around the construction of "Romi", a small robot kit by Polulu. The computer controlling Romi is a STM32 NUCLEO-L476RG, with an additional power distribution board to provide safe power. The purpose was to gain hands on experience with wiring motors and sensors, creating structured and adaptable code with the goal of creating a reliable closed feedback system that would be tested on a playing field. 
 
 # Romi
 ![Romi Robot](Romi_Orientation_Views.png)
@@ -39,8 +39,11 @@ This year's ME 405 term project centered around the construction of "Romi", a sm
 ![Wiring Diagram 2](Wiring_Pinout_2.png)
 ![Wiring Diagram 3](Wiring_Pinout_3.png)
 
-# Software Architecture
+# Repository
+The full source code and project files can be found on our 
+[GitHub Repository](https://github.com/jmontellano2603-ui/ME405---Term-Project-Website)
 
+# Software Architecture
 All control runs inside a cooperative round-robin scheduler from the cotask library (courtesy of Dr. JR Ridgley)
 Detailed explanations about each files purpose can be found in the \ref src_descriptions
 Six tasks share states, tuning variables, and more through Share and Queue objects:
