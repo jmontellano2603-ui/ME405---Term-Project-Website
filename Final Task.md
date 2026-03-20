@@ -40,7 +40,7 @@ Now that the characteristics of the final task have been described, we can now d
 
 Our team decided to complete this task as an implemented task in the scheduler, similar to that of the motor, line following, and state estimation tasks. The task itself is a large multi-part FSM that transfers between states once it has reached certain corresponding aspects. Below is a revision on the playfield that shows where exactly each state of the FSM is. 
 
-![Final Task Transition Overlay](Image/Our_Teams_Final_Task.png)
+![Our Final Task State Playfield Overlay](Image/Our_Teams_Final_Task.png)
 
 ### 1. S0_IDLE
 In the idle state, the robot initializes preliminary parameters in preparation for the next state. With the motor flags not set to high yet, the high speed setpoint is set for the motors and line following is disabled. The idle state then sets the motor flags and observer flags to high before changing over to the sprint state.
